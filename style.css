@@ -1,0 +1,104 @@
+body { 
+    font-family: 'Inter', sans-serif; 
+    -webkit-tap-highlight-color: transparent; 
+    overflow: hidden; 
+}
+
+.glass { 
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px); 
+    border: 1px solid rgba(255, 255, 255, 0.12); 
+}
+
+.glass-card { 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.page-transition { 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.hide-scroll::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+.type-btn-active { 
+    background: white !important; 
+    color: #0f172a !important; 
+}
+
+/* --- Ultra-Premium Nav Dock --- */
+.nav-dock {
+    background: rgba(15, 23, 42, 0.6); /* Deep slate with transparency */
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle top highlight */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.nav-item {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    color: #64748b; /* slate-500 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Active state: Glow and Lift */
+.nav-item.active {
+    color: #ffffff;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+/* The indicator dot */
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+}
+
+/* The FAB - The "Heart" of the app */
+.fab-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fab-button {
+    background: #ffffff;
+    color: #0f172a;
+    width: 56px;
+    height: 56px;
+    border-radius: 20px; /* Squircle look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+}
+
+.fab-button:active {
+    transform: scale(0.85);
+    background: #f1f5f9;
+}
+
+/* Smooth transition for page shifts */
+.page-transition {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
