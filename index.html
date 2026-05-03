@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Money Manager — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>💰 Money Manager</h1>
+    <p>Your personal finance tracker</p>
+  </div>
+
+  <div class="container">
+
+    <!-- Total Balance -->
+    <div class="clay-card balance-card">
+      <div class="label">Total Balance</div>
+      <div class="amount" id="total-balance">₹0.00</div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-row">
+      <div class="summary-item-sm">
+        <div class="label">Today</div>
+        <div class="value negative" id="today-spending">−₹0.00</div>
+      </div>
+      <div class="summary-item-sm">
+        <div class="label">Income</div>
+        <div class="value positive" id="total-income">+₹0.00</div>
+      </div>
+      <div class="summary-item-sm">
+        <div class="label">Expense</div>
+        <div class="value negative" id="total-expense">−₹0.00</div>
+      </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <h2 class="section-title">Recent Transactions</h2>
+    <div id="recent-list">
+      <p class="empty-state">Loading…</p>
+    </div>
+
+    <!-- Daily Summary -->
+    <h2 class="section-title">Daily Summary</h2>
+    <div id="daily-summary">
+      <p class="empty-state">Loading…</p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="active">
+      <span class="nav-icon">🏠</span>
+      <span>Dashboard</span>
+    </a>
+    <a href="add.html">
+      <span class="nav-icon">➕</span>
+      <span>Add</span>
+    </a>
+    <a href="history.html">
+      <span class="nav-icon">📋</span>
+      <span>History</span>
+    </a>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => UI.renderDashboard());
+  </script>
+
+</body>
+</html>
